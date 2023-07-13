@@ -1,6 +1,6 @@
 const { Telegraf, Markup } = require('telegraf');
 const filters = require('telegraf/filters');
-const { red, green, blue } = require("colors");
+// const { red, green, blue } = require("colors");
 require("dotenv").config();
 
 const bot = new Telegraf(process.env.TOKEN);
@@ -165,19 +165,19 @@ const commands = [
 
 
     
-class Logger {
-    constructor () {}
+// class Logger {
+//     constructor () {}
 
-    message (text) {
-        console.log(`${blue("[MESSAGE]")} ${green(text)}`);
-    }
+//     message (text) {
+//         console.log(`${blue("[MESSAGE]")} ${green(text)}`);
+//     }
 
-    error (text) {
-        console.log(`${red("[ERROR]")} ${green(text)}`);
-    }
-}
+//     error (text) {
+//         console.log(`${red("[ERROR]")} ${green(text)}`);
+//     }
+// }
 
-const logger = new Logger();
+// const logger = new Logger();
 
 bot.start((ctx) => ctx.reply('Бот запущен!'));
 
@@ -385,7 +385,8 @@ bot.on("inline_query", async (ctx) => {
             await ctx.answerInlineQuery(results, {cache_time: 0});
         }
     } catch (e) {
-        logger.error(e);
+        console.error(e);
+        // logger.error(e);
     }
        
 });
