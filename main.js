@@ -1,7 +1,6 @@
 const { Telegraf, Markup } = require('telegraf');
 const filters = require('telegraf/filters');
-// const { red, green, blue } = require("colors");
-require("dotenv").config();
+const { red, green, blue } = require("colors");
 
 const bot = new Telegraf(process.env.TOKEN);
 const myID = 1870013463;
